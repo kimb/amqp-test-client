@@ -6,15 +6,22 @@
     <version>0.1-SNAPSHOT</version>
     <name>Sample ping client</name>
     <properties>
-        <rabbitmq.amqpclient.version>2.6.1</rabbitmq.amqpclient.version>
         <java.version>1.6</java.version>
+        <slf4j.version>1.6.2</slf4j.version>
     </properties>
     <dependencies>
         <dependency>
+            <groupId>org.springframework.amqp</groupId>
+            <artifactId>spring-rabbit</artifactId>
+            <version>1.0.0.RELEASE</version>
+        </dependency>
+        <!-- Alternative amqp client lib (haven't tried it)
+        <dependency>
             <groupId>com.rabbitmq</groupId>
             <artifactId>amqp-client</artifactId>
-            <version>${rabbitmq.amqpclient.version}</version>
-        </dependency>
+            <version>2.6.1</version>
+        </dependency> -->
+        <!-- Spring (without commons-logging) + logback (bundles slf4j) -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
@@ -26,6 +33,24 @@
                     <artifactId>commons-logging</artifactId>
                 </exclusion>
             </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>jcl-over-slf4j</artifactId>
+            <version>${slf4j.version}</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j.version}</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>0.9.29</version>
+            <scope>runtime</scope>
         </dependency>
     </dependencies>
     <build>
