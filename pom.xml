@@ -4,7 +4,7 @@
     <groupId>fi.iki.kimb.amqp.test</groupId>
     <artifactId>amqp-test-client</artifactId>
     <version>0.1-SNAPSHOT</version>
-    <name>Simple AMQP client test</name>
+    <name>Simple AMQP test client</name>
     <properties>
         <java.version>1.6</java.version>
         <slf4j.version>1.6.2</slf4j.version>
